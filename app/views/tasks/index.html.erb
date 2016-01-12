@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="filter-bar row">
+			<div class="col-xs-4">
+				<%= link_to "All",'#' %>
+			</div>
+			<div class="col-xs-4">
+				<%= link_to "Completed",'#' %>
+			</div>
+			<div class="col-xs-4">
+				<%= link_to "Incomplete",'#' %>
+			</div>
+		</div>
+		<%= render partial: 'task',collection: @tasks %>
+	</div>
+</div>

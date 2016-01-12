@@ -1,0 +1,7 @@
+<%= simple_form_for @task do |f| %>
+	<%= f.input :name,input_html:{placeholder: 'Name of task'} %>
+	<%= f.input :desc,input_html:{placeholder: 'Description about task'} %>
+	<%= f.input :start %>
+	<%= f.input :end %>
+	<%= f.submit "Submit", class: 'btn btn-primary' %>
+<% end %>

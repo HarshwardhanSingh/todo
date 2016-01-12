@@ -1,0 +1,26 @@
+<div class="task">
+	<div class="row">
+		<div class="col-md-8">
+			<h4><%= link_to task.name,task_path(task.id) %></h4>
+		</div>
+		<div class="col-md-4">
+			<% if task.status? %>
+				<%= link_to fa_icon('check-circle',text: 'Completed'),mark_as_incomplete_path(task.id),class: 'label label-success pull-right',method: :put  %>
+			<% else %>
+				<% if Time.now > task.end %>
+					<%= link_to fa_icon('check',text: 'Mark as complete'),mark_as_complete_path(task.id),class: 'label label-danger pull-right',method: :put %>
+				<% else %>
+					<%= link_to fa_icon('check',text: 'Mark as complete'),mark_as_complete_path(task.id),class: 'label label-default pull-right',method: :put %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<span><label>Start Date:- </label> <%= task.start %></span>
+		</div>
+		<div class="col-md-6">
+			<span><label>Due Date:- </label> <%= task.end %></span>
+		</div>
+	</div>
+</div>
